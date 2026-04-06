@@ -7,6 +7,16 @@ import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
+// Blogtec homepage blocks
+import { HeroBlock } from '../../blocks/Hero/config'
+import { ServicesGridBlock } from '../../blocks/ServicesGrid/config'
+import { FeatureSpotlightBlock } from '../../blocks/FeatureSpotlight/config'
+import { VideoSectionBlock } from '../../blocks/VideoSection/config'
+import { BenefitsBlock } from '../../blocks/Benefits/config'
+import { AudienceBlock } from '../../blocks/Audience/config'
+import { ResultsBlock } from '../../blocks/Results/config'
+import { ResourcesCarouselBlock } from '../../blocks/ResourcesCarousel/config'
+import { TestimonialsBlock } from '../../blocks/Testimonials/config'
 import { hero } from '@/heros/config'
 import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -72,7 +82,12 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock],
+              blocks: [
+                CallToAction, Content, MediaBlock, Archive, FormBlock,
+                HeroBlock, ServicesGridBlock, FeatureSpotlightBlock,
+                VideoSectionBlock, BenefitsBlock, AudienceBlock,
+                ResultsBlock, ResourcesCarouselBlock, TestimonialsBlock,
+              ],
               required: true,
               admin: {
                 initCollapsed: true,
