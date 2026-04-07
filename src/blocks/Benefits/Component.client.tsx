@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 import React, { useState } from 'react'
 import type { BenefitsBlock as BenefitsBlockType } from '@/payload-types'

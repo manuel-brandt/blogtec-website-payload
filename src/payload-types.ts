@@ -616,6 +616,7 @@ export interface HeroBlock {
   blockType: 'heroBlock';
 }
 export interface ServicesGridBlock {
+  headline?: string | null;
   tabs?: {
     label: string;
     services?: { icon?: (number | null) | Media; name: string; url?: string | null; id?: string | null }[] | null;
@@ -691,6 +692,7 @@ export interface ResultsBlock {
   blockType: 'results';
 }
 export interface ResourcesCarouselBlock {
+  headline?: string | null;
   items?: {
     image?: (number | null) | Media;
     type?: ('caseStudy' | 'guide' | 'video' | 'blogArticle') | null;

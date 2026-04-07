@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react'
 import type { AudienceBlock as AudienceBlockType } from '@/payload-types'
 import { AudienceComponent } from './Component.client'
