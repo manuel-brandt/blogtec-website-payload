@@ -25,7 +25,7 @@ export const HeroBlockComponent: React.FC<HeroBlockType> = ({
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
           {primaryCTA?.label && (
             <Link
-              href={primaryCTA.url}
+              href={primaryCTA.url ?? '#'}
               className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-indigo-700 transition-colors"
             >
               {primaryCTA.label}
@@ -33,7 +33,7 @@ export const HeroBlockComponent: React.FC<HeroBlockType> = ({
           )}
           {secondaryCTA?.label && (
             <Link
-              href={secondaryCTA.url}
+              href={secondaryCTA.url ?? '#'}
               className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors"
             >
               {secondaryCTA.label}

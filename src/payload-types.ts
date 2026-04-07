@@ -198,7 +198,7 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | HeroBlock | ServicesGridBlock | FeatureSpotlightBlock | VideoSectionBlock | BenefitsBlock | AudienceBlock | ResultsBlock | ResourcesCarouselBlock | TestimonialsBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -603,6 +603,120 @@ export interface FormBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'formBlock';
+}
+export interface HeroBlock {
+  badge?: string | null;
+  headline: string;
+  subheadline: string;
+  primaryCTA?: { label: string; url: string } | null;
+  secondaryCTA?: { label?: string | null; url?: string | null } | null;
+  stats?: { value: string; label: string; id?: string | null }[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'heroBlock';
+}
+export interface ServicesGridBlock {
+  tabs?: {
+    label: string;
+    services?: { icon?: (number | null) | Media; name: string; url?: string | null; id?: string | null }[] | null;
+    id?: string | null;
+  }[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'servicesGrid';
+}
+export interface FeatureSpotlightBlock {
+  badge?: string | null;
+  headline: string;
+  subheadline?: string | null;
+  description?: string | null;
+  highlightHeadline?: string | null;
+  highlightText?: string | null;
+  image?: (number | null) | Media;
+  imagePosition?: ('left' | 'right') | null;
+  cta?: { label: string; url: string } | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'featureSpotlight';
+}
+export interface VideoSectionBlock {
+  headline?: string | null;
+  videoUrl?: string | null;
+  fallbackImage?: (number | null) | Media;
+  cta?: { label?: string | null; url?: string | null } | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'videoSection';
+}
+export interface BenefitsBlock {
+  headline?: string | null;
+  tabs?: {
+    label: string;
+    features?: { title: string; description?: string | null; id?: string | null }[] | null;
+    id?: string | null;
+  }[] | null;
+  highlights?: { text: string; id?: string | null }[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'benefits';
+}
+export interface AudienceBlock {
+  tabs?: {
+    label: string;
+    headline?: string | null;
+    description?: string | null;
+    features?: { text: string; id?: string | null }[] | null;
+    cta?: { label?: string | null; url?: string | null } | null;
+    id?: string | null;
+  }[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'audience';
+}
+export interface ResultsBlock {
+  headline?: string | null;
+  description?: string | null;
+  features?: { text: string; id?: string | null }[] | null;
+  cta?: { label?: string | null; url?: string | null } | null;
+  testimonial?: {
+    name?: string | null;
+    role?: string | null;
+    company?: string | null;
+    avatar?: (number | null) | Media;
+    quote?: string | null;
+    companyLogo?: (number | null) | Media;
+  } | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'results';
+}
+export interface ResourcesCarouselBlock {
+  items?: {
+    image?: (number | null) | Media;
+    type?: ('caseStudy' | 'guide' | 'video' | 'blogArticle') | null;
+    title: string;
+    url?: string | null;
+    id?: string | null;
+  }[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'resourcesCarousel';
+}
+export interface TestimonialsBlock {
+  headline?: string | null;
+  badge?: (number | null) | Media;
+  testimonials?: {
+    avatar?: (number | null) | Media;
+    name: string;
+    role?: string | null;
+    company?: string | null;
+    companyLogo?: (number | null) | Media;
+    quote: string;
+    id?: string | null;
+  }[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonials';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
